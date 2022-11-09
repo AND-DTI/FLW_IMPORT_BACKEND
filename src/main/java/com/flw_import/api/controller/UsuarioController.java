@@ -1,9 +1,10 @@
 package com.flw_import.api.controller;
+import com.flw_import.api.model.comex.*;
+import com.flw_import.api.service.comex.*;
 
-
+import java.util.List;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.responses.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -11,12 +12,8 @@ import org.springframework.http.ResponseEntity;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.flw_import.api.model.Roles;
-import com.flw_import.api.model.Usuario;
-import com.flw_import.api.service.RolesService;
-import com.flw_import.api.service.UsuarioService;
 
-import java.util.List;
+
 
 
 @CrossOrigin(origins = "http://localhost:8080")
@@ -43,7 +40,7 @@ public class UsuarioController {
 	
 	
 	
-	
+	//@PreAuthorize("hasRole('USER')")
 	@GetMapping(value="/getUser/{username}", produces="application/json")
 	@Operation(summary = "Pega usuário")		
 	@ApiResponses(value = {

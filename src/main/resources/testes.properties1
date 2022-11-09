@@ -28,6 +28,10 @@ spring.jpa.defer-datasource-initialization=false
 
 
 
+#spring.datasource.url=jdbc:oracle:thin:@//SAHDAMPPORA003.sa.mds.honda.com:1521/SFWDEV
+#spring.datasource.url=jdbc:oracle:thin:@//SFWDEV
+
+
 
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2
