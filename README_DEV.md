@@ -13,7 +13,7 @@ git push api_base master
 
 git config --local user.email "anderson_dasilva@honda.com.br" "AND-DTI"
 
-
+git branch -r
 
 
 
