@@ -1,11 +1,11 @@
 package com.flw_import.api.model.as400;
+import static com.flw_import.api.utils.Auxiliar.*;
+import com.flw_import.api.model.as400.Keys.FlwPlanKey;
+
 import java.io.Serializable;
 import javax.persistence.*;
 import org.hibernate.annotations.Immutable;
-
-import com.flw_import.api.model.as400.Keys.FlwPlanKey;
-
-import io.swagger.annotations.ApiModelProperty;
+//import io.swagger.annotations.ApiModelProperty;
 
 
 
@@ -131,6 +131,39 @@ FLEX5FLW	C(1000)	Flex Field 5
 	private String flex5flw;	//c(1000)	
 	
 	
+	public FlwPlan() {
+		
+	}
+
+	public FlwPlan(String codcia, Integer ponum, String potype, String invoice, Integer anoinvc, String tpplan, Integer plnseq, 
+				   String dtemiss, String origem, String ckpcod, Integer ckplevel, String plndo, Integer sla, Integer slaacum, Integer predec) {
+		this.codcia = codcia;
+		this.ponum = ponum;
+		this.potype = potype;
+		this.invoice = invoice;
+		this.anoinvc = anoinvc;
+		this.tpplan = tpplan;
+		this.plnseq = plnseq;
+		this.dtemiss = dtemiss;
+		this.origem = origem;
+		this.ckpcod = ckpcod;
+		this.ckplevel = ckplevel;
+		this.plndo = plndo;
+		this.sla = sla;
+		this.slaacum = slaacum;
+		this.predec = predec;
+		this.plndt = "20221101";
+		this.plnaudsys = "teste.jar";
+		this.plnaudusr = "ADM";
+		this.plnaudhst = "DEV";
+		this.plnauddt = "20221111";
+		this.plnaudhr = "07:00:49";
+		//this.flex1flw = null;
+		//this.flex2flw = null;
+		//this.flex3flw = flex3flw;
+		//this.flex4flw = flex4flw;
+		//this.flex5flw = flex5flw;
+	}
 
 	public String getCodcia() {		return codcia;	}
 	//public void setCodcia(String codcia) {		this.codcia = codcia;	}
@@ -141,7 +174,7 @@ FLEX5FLW	C(1000)	Flex Field 5
 	public String getPotype() {		return potype;	}
 	//public void setPotype(String potype) {		this.potype = potype;	}
 
-	public String getInvoice() {		return invoice.trim();	}
+	public String getInvoice() {		return trimNull(invoice);	}
 	//public void setInvoice(String invoice) {		this.invoice = invoice;	}
 
 	public Integer getAnoinvc() {		return anoinvc;	}
@@ -159,13 +192,13 @@ FLEX5FLW	C(1000)	Flex Field 5
 	public String getOrigem() {		return origem;	}
 	//public void setOrigem(String origem) {		this.origem = origem;	}
 
-	public String getCkpcod() {		return ckpcod.trim();	}
+	public String getCkpcod() {		return trimNull(ckpcod);	}
 	//public void setCkpcod(String ckpcod) {		this.ckpcod = ckpcod;	}
 
 	public Integer getCkplevel() {		return ckplevel;	}
 	//public void setCkplevel(Integer ckplevel) {		this.ckplevel = ckplevel;	}
 
-	public String getPlndo() {		return plndo.trim();	}
+	public String getPlndo() {		return trimNull(plndo);	}
 	//public void setPlndo(String plndo) {		this.plndo = plndo;	}
 
 	public Integer getSla() {		return sla;	}
@@ -180,7 +213,7 @@ FLEX5FLW	C(1000)	Flex Field 5
 	public String getPlndt() {		return plndt;	}
 	//public void setPlndt(String plndt) {		this.plndt = plndt;	}
 
-	public String getPlnaudsys() {		return plnaudsys.trim();	}
+	public String getPlnaudsys() {		return trimNull(plnaudsys);	}
 	//public void setPlnaudsys(String plnaudsys) {		this.plnaudsys = plnaudsys;	}
 
 	public String getPlnaudusr() {		return plnaudusr;	}
@@ -212,15 +245,20 @@ FLEX5FLW	C(1000)	Flex Field 5
 
 
 
-	public FlwPlan() {
-		
-	}
 
-	public FlwPlan(String codcia, Integer ponum) {
+	/*public String FlwPlanStr() {		
+		return this.codcia +", "+
+		       this.ponum;
+	}*/	
+
+	/*public FlwPlan(String codcia, Integer ponum) {
 		super();
 		this.codcia = codcia;
 		this.ponum = ponum;
-	}
+	}*/
+
+
+
 
 
 }

@@ -40,5 +40,9 @@ public class FlwPlanKey implements Serializable {
         this.plnseq = plnseq;
     }
 
+    public String FlwPlanKeyStr(){
+        return "key["+this.codcia+" / "+this.ponum+" / "+this.potype+" / "+this.invoice+" / "+this.anoinvc+" / "+this.tpplan+" / "+this.plnseq;
+    }
+
     // equals() and hashCode()
 }

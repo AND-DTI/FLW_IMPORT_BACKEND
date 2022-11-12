@@ -33,24 +33,21 @@ public class Usuario /*implements Serializable*/{
 	@JoinColumn(name="username")
 	private List<Roles> roles;
 	
+	public Usuario() {
+		
+	}
 			
-	public String getUsername() { return username; }
+	public String getUsername() 	{ return username; }
 	
-	public String getNome() { return nome; 	}
+	public String getNome() 		{ return nome; 	}
 	
-	public String getEmail() { return email; 	}
+	public String getEmail() 		{ return email; 	}
 	
-	public String getAtivo() { return ativo; 	}
+	public String getAtivo() 		{ return ativo; 	}
 	
 	public String getDepartamento() { return departamento; 	}
 	
-	public List<Roles> getRoles() { return roles; }	
-	
-	
-	public Usuario() {
-		// TODO Auto-generated constructor stub
-	}
-
-
+	public List<Roles> getRoles() 	{ return roles; }	
+		
 
 }

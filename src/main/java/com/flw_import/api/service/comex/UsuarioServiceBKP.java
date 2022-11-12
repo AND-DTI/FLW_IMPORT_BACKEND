@@ -1,16 +1,14 @@
 package com.flw_import.api.service.comex;
+import com.flw_import.api.model.comex.Usuario;
+//import com.flw_import.api.repository.comex.UsuarioRepository;
+import com.flw_import.api.repository.comex.UsuarioRepository_BKP;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+//import java.util.Optional;
+//import org.springframework.data.domain.Page;
+//import org.springframework.data.domain.Pageable;
+//import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import com.flw_import.api.model.comex.Usuario;
-import com.flw_import.api.repository.comex.UsuarioRepository;
-import com.flw_import.api.repository.comex.UsuarioRepository_BKP;
 
 
 
@@ -20,32 +18,27 @@ import com.flw_import.api.repository.comex.UsuarioRepository_BKP;
 public class UsuarioService implements UsuarioRepository{
 
 	@Override
-	public List<Usuario> findAll() {
-		// TODO Auto-generated method stub
+	public List<Usuario> findAll() {		
 		return findAll();		
 	}
 
 	@Override
-	public List<Usuario> findAll(Sort sort) {
-		// TODO Auto-generated method stub
+	public List<Usuario> findAll(Sort sort) {		
 		return null;
 	}
 
 	@Override
-	public Page<Usuario> findAll(Pageable pageable) {
-		// TODO Auto-generated method stub
+	public Page<Usuario> findAll(Pageable pageable) {		
 		return null;
 	}
 
 	@Override
-	public Optional<Usuario> findById(String id) {
-		// TODO Auto-generated method stub
+	public Optional<Usuario> findById(String id) {		
 		return Optional.empty();
 	}
 
 	@Override
 	public long count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	

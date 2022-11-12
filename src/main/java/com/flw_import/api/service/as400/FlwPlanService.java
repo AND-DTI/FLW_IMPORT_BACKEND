@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 
 
@@ -14,8 +15,18 @@ import org.springframework.data.domain.Sort;
 public class FlwPlanService {
     
     final FlwPlanRepository flwplanRepository;
-	private static ModelMapper modelMapper = new ModelMapper();
 	
+	/*@BeforeEach
+	public void setup() {
+    	this.mapper = new ModelMapper();
+	}*/
+
+	//private static ModelMapper modelMapper = new ModelMapper();
+	@Autowired	
+	private ModelMapper modelMapper;
+	
+
+
 	public FlwPlanService(FlwPlanRepository flwplanRepository) {
 		this.flwplanRepository = flwplanRepository;
 	}
@@ -38,14 +49,15 @@ public class FlwPlanService {
 		
 		List<FlwPlan> planos = flwplanRepository.findAll(Sort.by(Sort.Direction.ASC, "plnseq"));
 		
+		//Single object
 		//final var planosDTO = modelMapper.map(planos, FlwPlanDTO.class);
 
 
 		//List<PostDTO> postDtoList = Arrays.asList(modelMapper.map(postEntityList, PostDTO[].class));
 		List<FlwPlanDTO> planosDTO = Arrays.asList(modelMapper.map(planos, FlwPlanDTO[].class));
 		
-
-		
+		//assertEquals(game.getId(), gameDTO.getId());
+        //assertEquals(game.getName(), gameDTO.getName());
 
 
 		 return planosDTO;       
