@@ -55,6 +55,7 @@ public class WebSecurityConfig {
               //.successHandler(mySuccessHandler)
               //.failureHandler(myFailureHandler)
               .and().httpBasic()
+              .and().cors()
               .and().logout();
       return http.build();
   }

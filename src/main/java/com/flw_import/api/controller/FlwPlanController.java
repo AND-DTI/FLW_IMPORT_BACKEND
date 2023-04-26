@@ -12,6 +12,9 @@ import io.swagger.v3.oas.annotations.responses.*;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 //import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +26,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 
-@CrossOrigin(origins = "http://localhost:8080")
+//@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/api/flwplan")
 public class FlwPlanController {
@@ -65,8 +69,9 @@ public class FlwPlanController {
 	@ApiResponses(value = {	    
 	    @ApiResponse(responseCode="404", description="Nenhum plano cadastrado!")
 	})   	    
-    public ResponseEntity<List<FlwPlan>> listAll(){
-        			
+    //public ResponseEntity<List<FlwPlan>> listAll(){
+	public ResponseEntity<List<FlwPlan>> listAll(@PageableDefault(page=0, size=10, sort="plnseq", direction=Sort.Direction.ASC) Pageable pageable){    				
+
         List<FlwPlan> planos = flwplanService.findAll();				
 	    /*if (planos.isEmpty()) {
 	    	return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
